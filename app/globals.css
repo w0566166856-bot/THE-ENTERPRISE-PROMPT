@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-paper-line;
+  }
+  body {
+    @apply bg-paper text-ink font-body;
+    font-feature-settings: "ss01";
+  }
+  :focus-visible {
+    outline: 2px solid theme("colors.brass.DEFAULT");
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Clause number — the platform's signature typographic mark.
+     Every prompt is numbered like a contract article, never a bullet. */
+  .clause-mark {
+    @apply font-mono text-xs tracking-wide2 text-brass;
+  }
+
+  .seal-divider {
+    @apply relative h-px w-full bg-paper-line;
+  }
+}
